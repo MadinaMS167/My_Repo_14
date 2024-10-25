@@ -1,1 +1,0 @@
-This is day three of my trials to learn how to use git rm command!!!
