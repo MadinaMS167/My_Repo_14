@@ -4,17 +4,13 @@ students.sort()
 classes = ['Математика', 'Русский язык', 'Информатика']
 students_marks = {}
 for student in students:
-    students_marks['Алина'] = {}
+    students_marks[student] = {}
     for class_ in classes:
         marks = [random.randint(1, 5) for i in range(3)]
-        students_marks['Алина']['Математика'] = marks
-        marks = [random.randint(1, 5) for i in range(3)]
-        students_marks['Алина']['Русский язык'] = marks
-        marks = [random.randint(1, 5) for i in range(3)]
-        students_marks['Алина']['Информатика'] = marks
+        students_marks[student][class_]= marks
 for student in students:
     print(f'''{student}
-            {students_marks['Алина']}''')
+            {students_marks[student]}''')
 
 
 print('''
@@ -32,7 +28,7 @@ while True :
     if command == 1:
         print('1.Добавить оценку ученика по предмету')
         student = input('Введите имя ученика: ')
-        class_ = input('Ввдетие предмет:')
+        class_ = input('Введите предмет:')
         mark =int(input('Введите оценку:'))
         if student in students_marks.keys() and class_ in students_marks[student].keys():
             students_marks[student]
@@ -89,6 +85,7 @@ while True :
         del_student = input('Введите имя ученика,которого нужно удалить из списка : ')
         if del_student in students_marks.keys():
             del  students_marks[del_student]
+            print(f'{student} был удален из списка')
         else:
             print('Данного ученик в списке нет.')
     elif command == 7:
